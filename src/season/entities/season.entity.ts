@@ -1,3 +1,4 @@
+import { PhaseSeason } from 'src/phase_season/entities/phase_season.entity';
 import { SeasonJusticeOperator } from 'src/season_justice_operator/entities/season_justice_operator.entity';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
@@ -22,4 +23,7 @@ export class Season {
 
   @OneToMany(() => SeasonJusticeOperator, (seasonJusticeOperator) => seasonJusticeOperator.season)
   seasonJusticeOperators: SeasonJusticeOperator[];
+
+  @OneToMany(() => PhaseSeason, (phaseSeason) => phaseSeason.season)
+  phaseSeasons: PhaseSeason[];
 }

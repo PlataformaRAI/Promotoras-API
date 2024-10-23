@@ -11,6 +11,15 @@ import { PermissionModule } from './permission/permission.module';
 import { DatabaseOperationsModule } from './database_operations/database_operations.module';
 import { SeasonModule } from './season/season.module';
 import { SeasonJusticeOperatorModule } from './season_justice_operator/season_justice_operator.module';
+import { PhaseModule } from './phase/phase.module';
+import { PhaseSeasonModule } from './phase_season/phase_season.module';
+import { PhaseModuleModule } from './phase_module/phase_module.module';
+import { ModuleLessonModule } from './module_lesson/module_lesson.module';
+import { FileModule } from './file/file.module';
+import { DoubtQuestionModule } from './doubt_question/doubt_question.module';
+import { DoubtQuestionAnswerModule } from './doubt_question_answer/doubt_question_answer.module';
+import { CompletionLessonUserModule } from './completion_lesson_user/completion_lesson_user.module';
+import { PhaseProgressUserModule } from './phase_progress_user/phase_progress_user.module';
 
 @Module({
   imports: [
@@ -33,6 +42,15 @@ import { SeasonJusticeOperatorModule } from './season_justice_operator/season_ju
     DatabaseOperationsModule,
     SeasonModule,
     SeasonJusticeOperatorModule,
+    PhaseModule,
+    PhaseSeasonModule,
+    PhaseModuleModule,
+    ModuleLessonModule,
+    FileModule,
+    DoubtQuestionModule,
+    DoubtQuestionAnswerModule,
+    CompletionLessonUserModule,
+    PhaseProgressUserModule,
   ],
   controllers: [AppController],
   providers: [AppService],

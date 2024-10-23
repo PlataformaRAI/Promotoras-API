@@ -1,5 +1,10 @@
+import { CompletionLessonUser } from 'src/completion_lesson_user/entities/completion_lesson_user.entity';
 import { DatabaseOperation } from 'src/database_operations/entities/database_operation.entity';
+import { DoubtQuestion } from 'src/doubt_question/entities/doubt_question.entity';
+import { DoubtQuestionAnswer } from 'src/doubt_question_answer/entities/doubt_question_answer.entity';
 import { JusticeOperator } from 'src/justice_operator/entities/justice_operator.entity';
+import { Phase } from 'src/phase/entities/phase.entity';
+import { PhaseProgressUser } from 'src/phase_progress_user/entities/phase_progress_user.entity';
 import { Rol } from 'src/rol/entities/rol.entity';
 import { Column, Entity, PrimaryGeneratedColumn, JoinColumn, OneToMany, ManyToOne } from 'typeorm';
 
@@ -47,4 +52,19 @@ export class User {
 
   @OneToMany(() => DatabaseOperation, (databaseOperation) => databaseOperation.doneByUser)
   databaseOperations: DatabaseOperation[];
+
+  @OneToMany(() => Phase, (phase) => phase.instructor)
+  phases: Phase[];
+
+  @OneToMany(() => DoubtQuestion, (question) => question.authorUser)
+  doubtQuestions: DoubtQuestion[];
+
+  @OneToMany(() => DoubtQuestionAnswer, (answer) => answer.user)
+  doubtQuestionAnswers: DoubtQuestionAnswer[];
+
+  @OneToMany(() => CompletionLessonUser, (completionLesson) => completionLesson.user)
+  completionLessonsUser: CompletionLessonUser[];
+
+  @OneToMany(() => PhaseProgressUser, (phaseProgress) => phaseProgress.user)
+  phasesProgressUser: PhaseProgressUser[];
 }
